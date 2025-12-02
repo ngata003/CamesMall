@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CamesMall.Views.HomeSales"
+             BackgroundColor="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <Grid Grid.Row="0"
+              BackgroundColor="White"
+              Padding="15,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- LOGO -->
+            <Image Grid.Column="0"
+                   Source="camesmall.png"
+                   Aspect="AspectFit"
+                   HeightRequest="40"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" />
+
+            <Grid Grid.Column="2"
+                  HeightRequest="30"
+                  WidthRequest="30"
+                  VerticalOptions="Center">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnMenuClicked"/>
+                </Grid.GestureRecognizers>
+
+                <VerticalStackLayout Spacing="4"
+                                     VerticalOptions="Center">
+                    <BoxView Color="#E63946"
+                             HeightRequest="3"
+                             WidthRequest="30"
+                             CornerRadius="2"/>
+                    <BoxView Color="#E63946"
+                             HeightRequest="3"
+                             WidthRequest="30"
+                             CornerRadius="2"/>
+                    <BoxView Color="#E63946"
+                             HeightRequest="3"
+                             WidthRequest="30"
+                             CornerRadius="2"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+
+        <!-- CONTENU -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20" Padding="20">
+
+                <!-- SECTION PRODUIT -->
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Image produit -->
+                    <Border Grid.Column="0"
+                            BackgroundColor="#F5F5F5"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 15"
+                            Padding="20"
+                            HeightRequest="250">
+                        <Image Source="nb.png"
+                               Aspect="AspectFit"/>
+                    </Border>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="15" VerticalOptions="Center">
+
+                        <Label Text="NEW BALANCE"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="Black"/>
+
+                        <Label TextColor="#666666"
+                               FontSize="14"
+                               LineHeight="1.4">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="chaussure flexible"/>
+                                    <Span Text="&#x0a;"/>
+                                    <Span Text="adaptée pour les sportifs"/>
+                                    <Span Text="&#x0a;"/>
+                                    <Span Text="et les fidèles adonnés de"/>
+                                    <Span Text="&#x0a;"/>
+                                    <Span Text="shopping"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Button Text="commandez maintenant"
+                                BackgroundColor="#FF4444"
+                                TextColor="White"
+                                FontSize="12"
+                                CornerRadius="25"
+                                Padding="20,12"
+                                HorizontalOptions="Start"
+                                Clicked="OnCommanderClicked"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- POINTURES / PRIX -->
+                <Grid ColumnSpacing="10" Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 0-45p -->
+                    <Border Grid.Column="0"
+                            BackgroundColor="White"
+                            Stroke="#E0E0E0"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15">
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="0-45p"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="2800 XAF"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- 46-70p -->
+                    <Border Grid.Column="1"
+                            BackgroundColor="White"
+                            Stroke="#E0E0E0"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15">
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="46-70p"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="2500 XAF"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- 76-1000p -->
+                    <Border Grid.Column="2"
+                            BackgroundColor="White"
+                            Stroke="#E0E0E0"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15">
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="76-1000p"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="2000 XAF"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+
+                <!-- FOOTER -->
+                <Grid Margin="0,30,0,0"
+                      BackgroundColor="#FF4444"
+                      Padding="20,30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- SERVICES -->
+                    <VerticalStackLayout Grid.Column="0" Spacing="12">
+                        <Label Text="SERVICES"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+                        <Label Text="creation web" FontSize="12" TextColor="White"/>
+                        <Label Text="design graphique" FontSize="12" TextColor="White"/>
+                    </VerticalStackLayout>
+
+                    <!-- LIENS -->
+                    <VerticalStackLayout Grid.Column="1" Spacing="12">
+                        <Label Text="LIENS"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+                        <Label Text="home" FontSize="12" TextColor="White"/>
+                        <Label Text="shop" FontSize="12" TextColor="White"/>
+                    </VerticalStackLayout>
+
+                    <!-- HORAIRES -->
+                    <VerticalStackLayout Grid.Column="2" Spacing="12">
+                        <Label Text="HORAIRES"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+                        <Label Text="08h-13h" FontSize="12" TextColor="White"/>
+                        <Label Text="15h-20h" FontSize="12" TextColor="White"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>
